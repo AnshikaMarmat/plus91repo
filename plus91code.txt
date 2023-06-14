@@ -1,0 +1,50 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class NewClass{
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        
+        public int maxDifference(int arr[], int N, int K){
+            
+            Arrays.sort(arr);
+        
+            int sum1=0;
+            int revsum1=0;
+            int sum2=0;
+            int revsum2=0;
+
+            for(int i=0;i<K;i++){
+                sum1 += arr[i];
+            }
+            
+              for(int i=K;i<N,i++){
+                sum2 += arr[i];
+        }
+            int rev[] = new int[N];
+            
+            int j=0;
+            for(int i=N-1,i>=0;i--){
+                rev[j] = arr[i];
+            }
+            j++;
+            
+            for(int i=0;i<K;i++){
+                revsum1 += rev[i];
+            }
+            
+            for(int i=K;i<N;i++){
+                revsum2 += rev[i];
+            }
+         
+         
+            int val1= Math.abs(sum2-sum1);
+            int val2= Math.abs(revsum2-revsum1);
+            
+            int res= Math.max(val1, val2);
+            
+            
+        return res;
+    }
+}
